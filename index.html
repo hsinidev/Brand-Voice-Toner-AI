@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Voice Toner: Project Documentation</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to enhance readability and contrast */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom accent color (using your "Mystic Blue" base) */
+        .accent-color {
+            color: #0077A3; 
+        }
+        .bg-accent-light {
+            background-color: #E6F0F3;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-gray-900 text-white shadow-lg">
+        <div class="max-w-4xl mx-auto py-10 px-6">
+            <h1 class="text-4xl font-extrabold tracking-tight">
+                🎙️ Brand Voice Toner: Dynamic AI Rewriter
+            </h1>
+            <p class="mt-2 text-gray-400 text-lg">
+                A desktop application for generating dual-format, brand-aligned content powered by Ollama.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto py-12 px-6">
+
+        <!-- Project Overview -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2 text-gray-700">Project Overview</h2>
+            <p class="text-lg leading-relaxed">
+                The **Brand Voice Toner** is a powerful, dynamically-themed desktop application that uses Large Language Models (**LLMs**) to instantly rewrite any piece of text to match a specified brand voice (*Witty*, *Professional*, *Playful*). This tool ensures content creators have clean, structured content ready for any platform, from social media to WordPress.
+            </p>
+        </section>
+        
+        <!-- Key Features -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2 text-gray-700">Key Features</h2>
+            <ul class="space-y-4 text-lg">
+                <li class="p-4 bg-white shadow-md rounded-lg border border-gray-200">
+                    <strong class="text-xl accent-color">Dual Output:</strong> Generates content simultaneously in two formats for ease of use:
+                    <ul class="ml-6 mt-2 list-disc text-base text-gray-600 space-y-1">
+                        <li>**Plain Text:** Clean, unformatted text ready for any document or email.</li>
+                        <li>**HTML Code:** Fully structured with tags (`&lt;p&gt;`, `&lt;h2&gt;`, `&lt;ul&gt;`, etc.) ready to paste directly into the **WordPress Classic Editor**.</li>
+                    </ul>
+                </li>
+                <li class="p-4 bg-white shadow-md rounded-lg border border-gray-200">
+                    <strong class="text-xl accent-color">Dynamic Theming:</strong> Supports multiple color schemes ("Pink Magic," "Mystic Blue," "Warlock Green") which can be switched instantly via the settings menu, along with standard Dark/Light mode support.
+                </li>
+                <li class="p-4 bg-white shadow-md rounded-lg border border-gray-200">
+                    <strong class="text-xl accent-color">Flexible Power Source:</strong> Works equally well using **Ollama Local** (using your PC's GPU/CPU for privacy and speed) or connecting to **Ollama Cloud** (using your cloud API key for greater model access).
+                </li>
+                <li class="p-4 bg-white shadow-md rounded-lg border border-gray-200">
+                    <strong class="text-xl accent-color">Persistent Settings:</strong> Automatically saves all user inputs, API keys, and theme preferences between sessions.
+                </li>
+                <li class="p-4 bg-white shadow-md rounded-lg border border-gray-200">
+                    <strong class="text-xl accent-color">Native Control:</strong> Includes a full right-click context menu (Cut, Copy, Paste) on all text fields.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Prerequisites -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2 text-gray-700">💻 Prerequisites: Getting Started</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-2">1. Install Python (Recommended Version: 3.11/3.12)</h3>
+            <ol class="list-decimal list-inside ml-4 space-y-2 text-gray-700">
+                <li>
+                    **Download:** Go to the official 
+                    <a href="https://www.python.org/downloads/" class="accent-color hover:underline">Python website</a> and download the latest stable version.
+                </li>
+                <li>
+                    **Install:** During the installation process, check the box that says 
+                    <strong class="font-mono bg-gray-100 p-1 rounded">"Add python.exe to PATH"</strong>.
+                </li>
+            </ol>
+
+            <h3 class="text-xl font-semibold mt-6 mb-2">2. Install and Run Ollama</h3>
+            <ol class="list-decimal list-inside ml-4 space-y-2 text-gray-700">
+                <li>
+                    **Install Ollama:** Download and install the application for Windows from the 
+                    <a href="https://ollama.com/download" class="accent-color hover:underline">Ollama website</a>.
+                </li>
+                <li>
+                    **Download a Model:** Open your Command Prompt (CMD) or PowerShell and download the base model needed:
+                    <div class="font-mono bg-gray-800 text-green-400 p-3 rounded-lg mt-2 text-sm overflow-x-auto">
+                        ollama pull llama3:8b
+                    </div>
+                </li>
+                <li>
+                    **Run Server:** Ensure the Ollama server is running in the background before launching the app.
+                </li>
+            </ol>
+        </section>
+
+        <!-- Installation and Setup -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2 text-gray-700">⚙️ Installation and Setup</h2>
+            <h3 class="text-xl font-semibold mt-6 mb-2">1. Clone the Repository</h3>
+            <div class="font-mono bg-gray-800 text-green-400 p-3 rounded-lg mt-2 text-sm overflow-x-auto">
+                git clone [YOUR GITHUB REPOSITORY URL HERE]<br>
+                cd "Brand Voice Toner"
+            </div>
+
+            <h3 class="text-xl font-semibold mt-6 mb-2">2. Create and Activate Virtual Environment</h3>
+            <div class="font-mono bg-gray-800 text-green-400 p-3 rounded-lg mt-2 text-sm overflow-x-auto">
+                # Create the environment<br>
+                python -m venv .venv<br>
+                <br>
+                # Activate the environment<br>
+                .venv\Scripts\activate 
+            </div>
+
+            <h3 class="text-xl font-semibold mt-6 mb-2">3. Install Dependencies</h3>
+            <div class="font-mono bg-gray-800 text-green-400 p-3 rounded-lg mt-2 text-sm overflow-x-auto">
+                pip install customtkinter ollama
+            </div>
+
+            <h3 class="text-xl font-semibold mt-6 mb-2">4. Configure Theme Files (Critical)</h3>
+            <p class="text-gray-700 text-lg">
+                Ensure the two JSON files are present in the root directory: 
+                <strong class="font-mono">master_themes.json</strong> (colors) and 
+                <strong class="font-mono">toner_settings.json</strong> (user settings).
+            </p>
+        </section>
+
+        <!-- Running the Application -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2 text-gray-700">▶️ Running the Application</h2>
+            <p class="text-gray-700 text-lg mb-4">
+                With your virtual environment active, run the main script:
+            </p>
+            <div class="font-mono bg-gray-800 text-green-400 p-3 rounded-lg mt-2 text-sm overflow-x-auto">
+                python toner_app.py
+            </div>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-2">Using Cloud Ollama</h3>
+            <p class="text-gray-700 text-lg">
+                To switch to a cloud model, select **Cloud Ollama** in the app's settings and enter your **Cloud API URL** (`https://ollama.com`) and **API Key**.
+            </p>
+        </section>
+
+        <!-- Executable Section -->
+        <section>
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2 text-gray-700">📦 Creating the Executable (.exe)</h2>
+            <p class="text-gray-700 text-lg mb-4">
+                To share your tool with non-technical users, use **PyInstaller** to create a single file:
+            </p>
+            <div class="font-mono bg-gray-800 text-green-400 p-3 rounded-lg mt-2 text-sm overflow-x-auto">
+                pyinstaller --onefile --windowed ^<br>
+                --name="BrandVoiceToner" ^<br>
+                --add-data "master_themes.json;." ^<br>
+                --add-data "toner_settings.json;." ^<br>
+                toner_app.py
+            </div>
+            <p class="mt-4 text-lg text-gray-700">
+                The final executable, **`BrandVoiceToner.exe`**, will be located in the **`dist`** folder.
+            </p>
+        </section>
+
+    </main>
+
+</body>
+</html>
